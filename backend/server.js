@@ -61,6 +61,38 @@ function getEmailBranding(email) {
   }
 }
 
+// Function to read and convert image to base64
+function getImageBase64(imageName) {
+  try {
+    const imagePath = path.join(__dirname, 'images', imageName);
+    if (fs.existsSync(imagePath)) {
+      const imageBuffer = fs.readFileSync(imagePath);
+      return imageBuffer.toString('base64');
+    }
+    return null;
+  } catch (error) {
+    console.error(`Error reading image ${imageName}:`, error);
+    return null;
+  }
+}
+
+// Root route - Health check
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'Bulk Email Server is running',
+    endpoints: {
+      health: '/api/health',
+      sendBulkEmail: '/api/send-bulk-email (POST)'
+    }
+  });
+});
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Server is running' });
+});
+
 // Bulk email sending endpoint
 app.post('/api/send-bulk-email', async (req, res) => {
   try {
@@ -85,6 +117,10 @@ app.post('/api/send-bulk-email', async (req, res) => {
     const senderTagline = senderBranding.tagline;
     console.log(`Sender branding (footer) - Title: ${senderTitle}, Tagline: ${senderTagline}`);
 
+    // Read and convert images to base64 once
+    const logoBase64 = getImageBase64('logo.png');
+    const developersinfoLogoBase64 = getImageBase64('Developersinfotech.png');
+
     const results = await Promise.allSettled(
       recipients.map(recipient => {
         const recipientBranding = getEmailBranding(recipient);
@@ -92,31 +128,32 @@ app.post('/api/send-bulk-email', async (req, res) => {
         const recipientTagline = recipientBranding.tagline;
         console.log(`Sending to ${recipient} | Header: ${recipientTitle} | Footer: ${senderTitle}`);
         
-        // Read logo images
-        const logoPath = path.join(__dirname, 'images', 'logo.png');
-        const developersinfoLogoPath = path.join(__dirname, 'images', 'Developersinfotech.png');
+        // Prepare attachments array
+        const attachments = [];
         
-        console.log('Logo path:', logoPath);
-        console.log('Developersinfotech logo path:', developersinfoLogoPath);
-        console.log('Logo exists:', fs.existsSync(logoPath));
-        console.log('Developersinfotech logo exists:', fs.existsSync(developersinfoLogoPath));
+        if (logoBase64) {
+          attachments.push({
+            filename: 'logo.png',
+            content: logoBase64,
+            encoding: 'base64',
+            cid: 'uniquelogoimage'
+          });
+        }
+        
+        if (developersinfoLogoBase64) {
+          attachments.push({
+            filename: 'Developersinfotech.png',
+            content: developersinfoLogoBase64,
+            encoding: 'base64',
+            cid: 'uniquedevelopersinfotechimage'
+          });
+        }
         
         return transporter.sendMail({
           from: `"${process.env.EMAIL_NAME}" <${process.env.EMAIL_USER}>`,
           to: recipient,
           subject: subject,
-          attachments: [
-            {
-              filename: 'logo.png',
-              path: logoPath,
-              cid: 'uniquelogoimage'
-            },
-            {
-              filename: 'Developersinfotech.png',
-              path: developersinfoLogoPath,
-              cid: 'uniquedevelopersinfotechimage'
-            }
-          ],
+          attachments: attachments,
           html: `
             <!DOCTYPE html>
             <html>
@@ -145,7 +182,7 @@ app.post('/api/send-bulk-email', async (req, res) => {
                                       <table width="60" height="60" cellpadding="0" cellspacing="0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(244, 208, 63, 0.3);">
                                         <tr>
                                           <td align="center" valign="middle" style="text-align: center; vertical-align: middle;">
-                                            <img src="cid:uniquelogoimage" alt="Logo" style="display: block; width: 60px; height: 60px; margin: 0 auto;" />
+                                            ${logoBase64 ? `<img src="cid:uniquelogoimage" alt="Logo" style="display: block; width: 60px; height: 60px; margin: 0 auto;" />` : ''}
                                           </td>
                                         </tr>
                                       </table>
@@ -243,7 +280,7 @@ app.post('/api/send-bulk-email', async (req, res) => {
                                       <table width="60" height="60" cellpadding="0" cellspacing="0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(244, 208, 63, 0.3);">
                                         <tr>
                                           <td align="center" valign="middle" style="text-align: center; vertical-align: middle;">
-                                            <img src="cid:uniquedevelopersinfotechimage" alt="Developersinfotech Logo" style="display: block; width: 100px; height: 50px; margin: 0 auto;" />
+                                            ${developersinfoLogoBase64 ? `<img src="cid:uniquedevelopersinfotechimage" alt="Developersinfotech Logo" style="display: block; width: 100px; height: 50px; margin: 0 auto;" />` : ''}
                                           </td>
                                         </tr>
                                       </table>
@@ -338,12 +375,12 @@ app.post('/api/send-bulk-email', async (req, res) => {
   }
 });
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running' });
-});
+// Export for Vercel serverless
+module.exports = app;
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Start server (only in local development)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
