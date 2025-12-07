@@ -23,43 +23,44 @@ export default function LawFirmEmailSender() {
     return emails.length;
   };
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
-  const handleSend = async () => {
-    const validRecipients = parseRecipients(recipients);
+const handleSend = async () => {
+  const validRecipients = parseRecipients(recipients);
+  
+  if (validRecipients.length === 0) {
+    setResult({ success: false, message: 'Please add at least one recipient' });
+    return;
+  }
+
+  if (!subject.trim()) {
+    setResult({ success: false, message: 'Please add a subject' });
+    return;
+  }
+
+  if (!message.trim()) {
+    setResult({ success: false, message: 'Please add a message' });
+    return;
+  }
+
+  setSending(true);
+  setResult(null);
+
+  try {
+    console.log('Sending to:', `${API_URL}/api/send-bulk-email`); // Debug log
     
-    if (validRecipients.length === 0) {
-      setResult({ success: false, message: 'Please add at least one recipient' });
-      return;
-    }
-
-    if (!subject.trim()) {
-      setResult({ success: false, message: 'Please add a subject' });
-      return;
-    }
-
-    if (!message.trim()) {
-      setResult({ success: false, message: 'Please add a message' });
-      return;
-    }
-
-    setSending(true);
-    setResult(null);
-
-    try {
-      const response = await fetch(`${API_URL}/api/send-bulk-email`, 
-        {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          recipients: validRecipients,
-          subject,
-          message,
-        }),
-      });
-
+    const response = await fetch(`${API_URL}/api/send-bulk-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        recipients: validRecipients,
+        subject,
+        message,
+      }),
+    });
+    
       const data = await response.json();
 
       if (response.ok) {
