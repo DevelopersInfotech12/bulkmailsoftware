@@ -23,7 +23,10 @@ export default function LawFirmEmailSender() {
     return emails.length;
   };
 
- const API_URL = process.env.NEXT_PUBLIC_API_URL;
+ const API_URL = "https://bulkmailsoftwarebackend.vercel.app/";
+
+console.log("API_URL:", API_URL);
+
 
 const handleSend = async () => {
   const validRecipients = parseRecipients(recipients);

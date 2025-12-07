@@ -40,7 +40,8 @@ function LawFirmEmailSender() {
         const emails = parseRecipients(recipients);
         return emails.length;
     };
-    const API_URL = ("TURBOPACK compile-time value", "http://localhost:5000") || 'http://localhost:5000';
+    const API_URL = "https://bulkmailsoftwarebackend.vercel.app/";
+    console.log("API_URL:", API_URL);
     const handleSend = async ()=>{
         const validRecipients = parseRecipients(recipients);
         if (validRecipients.length === 0) {
@@ -122,12 +123,12 @@ function LawFirmEmailSender() {
                                             className: "w-8 h-8"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 92,
+                                            lineNumber: 95,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 91,
+                                        lineNumber: 94,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -137,7 +138,7 @@ function LawFirmEmailSender() {
                                                 children: "Legal Communications"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 95,
+                                                lineNumber: 98,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -145,19 +146,19 @@ function LawFirmEmailSender() {
                                                 children: "Professional Client Correspondence System"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 96,
+                                                lineNumber: 99,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 97,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                lineNumber: 90,
+                                lineNumber: 93,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -170,20 +171,20 @@ function LawFirmEmailSender() {
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 101,
+                                                lineNumber: 104,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Documents"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 102,
+                                                lineNumber: 105,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 100,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -193,20 +194,20 @@ function LawFirmEmailSender() {
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 105,
+                                                lineNumber: 108,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Clients"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 106,
+                                                lineNumber: 109,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 104,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -216,42 +217,42 @@ function LawFirmEmailSender() {
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 109,
+                                                lineNumber: 112,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Messages"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 110,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 108,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                lineNumber: 99,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                        lineNumber: 89,
+                        lineNumber: 92,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                    lineNumber: 88,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                lineNumber: 87,
+                lineNumber: 90,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -269,7 +270,7 @@ function LawFirmEmailSender() {
                                             className: "w-12 h-1 bg-amber-600 mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 123,
+                                            lineNumber: 126,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -277,7 +278,7 @@ function LawFirmEmailSender() {
                                             children: "Client Communication"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 124,
+                                            lineNumber: 127,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -285,7 +286,7 @@ function LawFirmEmailSender() {
                                             children: "Send professional correspondence to multiple clients simultaneously while maintaining the highest standards of legal communication."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 125,
+                                            lineNumber: 128,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -301,12 +302,12 @@ function LawFirmEmailSender() {
                                                                 children: "1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 131,
+                                                                lineNumber: 134,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 133,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -316,7 +317,7 @@ function LawFirmEmailSender() {
                                                                     children: "Add Recipients"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 137,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -324,19 +325,19 @@ function LawFirmEmailSender() {
                                                                     children: "Enter client email addresses"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 135,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 136,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 132,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -349,12 +350,12 @@ function LawFirmEmailSender() {
                                                                 children: "2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 140,
+                                                                lineNumber: 143,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 142,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -364,7 +365,7 @@ function LawFirmEmailSender() {
                                                                     children: "Compose Message"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 143,
+                                                                    lineNumber: 146,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -372,19 +373,19 @@ function LawFirmEmailSender() {
                                                                     children: "Draft your legal correspondence"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 144,
+                                                                    lineNumber: 147,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 145,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 138,
+                                                    lineNumber: 141,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,12 +398,12 @@ function LawFirmEmailSender() {
                                                                 children: "3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 149,
+                                                                lineNumber: 152,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 148,
+                                                            lineNumber: 151,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -412,7 +413,7 @@ function LawFirmEmailSender() {
                                                                     children: "Send Securely"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 152,
+                                                                    lineNumber: 155,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -420,31 +421,31 @@ function LawFirmEmailSender() {
                                                                     children: "Deliver to all recipients"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                    lineNumber: 153,
+                                                                    lineNumber: 156,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 151,
+                                                            lineNumber: 154,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 147,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 128,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                    lineNumber: 122,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,7 +456,7 @@ function LawFirmEmailSender() {
                                             children: "Current Session"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 161,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -469,7 +470,7 @@ function LawFirmEmailSender() {
                                                             children: "Recipients"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 164,
+                                                            lineNumber: 167,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -477,13 +478,13 @@ function LawFirmEmailSender() {
                                                             children: getRecipientCount()
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 165,
+                                                            lineNumber: 168,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 166,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -494,7 +495,7 @@ function LawFirmEmailSender() {
                                                             children: "Status"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 168,
+                                                            lineNumber: 171,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -502,31 +503,31 @@ function LawFirmEmailSender() {
                                                             children: "Ready"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                            lineNumber: 169,
+                                                            lineNumber: 172,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 170,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                            lineNumber: 162,
+                                            lineNumber: 165,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                    lineNumber: 160,
+                                    lineNumber: 163,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                            lineNumber: 121,
+                            lineNumber: 124,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -542,7 +543,7 @@ function LawFirmEmailSender() {
                                                 children: "Compose Correspondence"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 179,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -550,13 +551,13 @@ function LawFirmEmailSender() {
                                                 children: "All fields are required for legal documentation"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 180,
+                                                lineNumber: 183,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 178,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -577,13 +578,13 @@ function LawFirmEmailSender() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 189,
+                                                                lineNumber: 192,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 189,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -594,7 +595,7 @@ function LawFirmEmailSender() {
                                                         className: "w-full px-4 py-3 text-slate-700 bg-stone-50 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none font-mono text-sm"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 197,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -604,20 +605,20 @@ function LawFirmEmailSender() {
                                                                 className: "w-3 h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 202,
+                                                                lineNumber: 205,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Supports multiple formats: CSV, Excel paste, or manual entry"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 201,
+                                                        lineNumber: 204,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 185,
+                                                lineNumber: 188,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -627,7 +628,7 @@ function LawFirmEmailSender() {
                                                         children: "Subject Line"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 209,
+                                                        lineNumber: 212,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -638,13 +639,13 @@ function LawFirmEmailSender() {
                                                         className: "w-full px-4 py-3 text-slate-700 bg-stone-50 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 212,
+                                                        lineNumber: 215,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 208,
+                                                lineNumber: 211,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -654,7 +655,7 @@ function LawFirmEmailSender() {
                                                         children: "Message Content"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 223,
+                                                        lineNumber: 226,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -665,7 +666,7 @@ function LawFirmEmailSender() {
                                                         className: "w-full px-4 py-3 text-slate-700 bg-stone-50 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none leading-relaxed"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 226,
+                                                        lineNumber: 229,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -673,13 +674,13 @@ function LawFirmEmailSender() {
                                                         children: "Professional legal correspondence formatting applied automatically"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 233,
+                                                        lineNumber: 236,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 222,
+                                                lineNumber: 225,
                                                 columnNumber: 17
                                             }, this),
                                             result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -689,13 +690,13 @@ function LawFirmEmailSender() {
                                                         className: "w-5 h-5 flex-shrink-0 mt-0.5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 247,
                                                         columnNumber: 23
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                                         className: "w-5 h-5 flex-shrink-0 mt-0.5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 246,
+                                                        lineNumber: 249,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -703,13 +704,13 @@ function LawFirmEmailSender() {
                                                         children: result.message
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 251,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 238,
+                                                lineNumber: 241,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -724,14 +725,14 @@ function LawFirmEmailSender() {
                                                                 className: "w-5 h-5 animate-spin"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 265,
+                                                                lineNumber: 268,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Sending Correspondence..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 266,
+                                                                lineNumber: 269,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
@@ -741,54 +742,54 @@ function LawFirmEmailSender() {
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 270,
+                                                                lineNumber: 273,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Send to All Recipients"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                                lineNumber: 271,
+                                                                lineNumber: 274,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                    lineNumber: 254,
+                                                    lineNumber: 257,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                                lineNumber: 253,
+                                                lineNumber: 256,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 183,
+                                        lineNumber: 186,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                lineNumber: 177,
+                                lineNumber: 180,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                            lineNumber: 176,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                    lineNumber: 119,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                lineNumber: 118,
+                lineNumber: 121,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -805,7 +806,7 @@ function LawFirmEmailSender() {
                                         className: "w-5 h-5 text-amber-600"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 290,
+                                        lineNumber: 293,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -813,13 +814,13 @@ function LawFirmEmailSender() {
                                         children: "Legal Communications System"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                        lineNumber: 291,
+                                        lineNumber: 294,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                lineNumber: 289,
+                                lineNumber: 292,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -827,29 +828,29 @@ function LawFirmEmailSender() {
                                 children: "Confidential & Secure Attorney-Client Communication"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                                lineNumber: 293,
+                                lineNumber: 296,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                        lineNumber: 288,
+                        lineNumber: 291,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                    lineNumber: 287,
+                    lineNumber: 290,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-                lineNumber: 286,
+                lineNumber: 289,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/BulkEmailSender.jsx",
-        lineNumber: 85,
+        lineNumber: 88,
         columnNumber: 5
     }, this);
 }
