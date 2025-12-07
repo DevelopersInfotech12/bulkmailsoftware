@@ -23,7 +23,7 @@ export default function LawFirmEmailSender() {
     return emails.length;
   };
 
- const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const handleSend = async () => {
   const validRecipients = parseRecipients(recipients);
@@ -60,7 +60,7 @@ const handleSend = async () => {
         message,
       }),
     });
-    
+
       const data = await response.json();
 
       if (response.ok) {
