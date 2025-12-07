@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import { Mail, Send, AlertCircle, CheckCircle, Loader2, Scale, FileText, Users } from 'lucide-react';
 
+// API Configuration - Update this with your Vercel URL
+const API_URL = process.env.NEXT_APP_API_URL || 'https://bulkmailsoftwarebackend.vercel.app';
+
 export default function LawFirmEmailSender() {
   const [recipients, setRecipients] = useState('');
   const [subject, setSubject] = useState('');
@@ -23,46 +26,39 @@ export default function LawFirmEmailSender() {
     return emails.length;
   };
 
- const API_URL = "https://bulkmailsoftwarebackend.vercel.app/";
-
-console.log("API_URL:", API_URL);
-
-
-const handleSend = async () => {
-  const validRecipients = parseRecipients(recipients);
-  
-  if (validRecipients.length === 0) {
-    setResult({ success: false, message: 'Please add at least one recipient' });
-    return;
-  }
-
-  if (!subject.trim()) {
-    setResult({ success: false, message: 'Please add a subject' });
-    return;
-  }
-
-  if (!message.trim()) {
-    setResult({ success: false, message: 'Please add a message' });
-    return;
-  }
-
-  setSending(true);
-  setResult(null);
-
-  try {
-    console.log('Sending to:', `${API_URL}/api/send-bulk-email`); // Debug log
+  const handleSend = async () => {
+    const validRecipients = parseRecipients(recipients);
     
-    const response = await fetch(`${API_URL}/api/send-bulk-email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        recipients: validRecipients,
-        subject,
-        message,
-      }),
-    });
+    if (validRecipients.length === 0) {
+      setResult({ success: false, message: 'Please add at least one recipient' });
+      return;
+    }
+
+    if (!subject.trim()) {
+      setResult({ success: false, message: 'Please add a subject' });
+      return;
+    }
+
+    if (!message.trim()) {
+      setResult({ success: false, message: 'Please add a message' });
+      return;
+    }
+
+    setSending(true);
+    setResult(null);
+
+    try {
+      const response = await fetch(`${API_URL}/api/send-bulk-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          recipients: validRecipients,
+          subject,
+          message,
+        }),
+      });
 
       const data = await response.json();
 
@@ -78,7 +74,7 @@ const handleSend = async () => {
         setResult({ success: false, message: data.message || 'Failed to send emails' });
       }
     } catch (error) {
-      setResult({ success: false, message: 'Error connecting to server. Make sure backend is running on port 5000.' });
+      setResult({ success: false, message: 'Error connecting to server. Please check your backend deployment.' });
     } finally {
       setSending(false);
     }
@@ -278,9 +274,6 @@ const handleSend = async () => {
                 </div>
               </div>
             </div>
-
-            {/* Technical Setup */}
-           
           </div>
         </div>
       </main>
