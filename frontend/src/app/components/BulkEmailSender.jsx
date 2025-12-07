@@ -23,6 +23,8 @@ export default function LawFirmEmailSender() {
     return emails.length;
   };
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
   const handleSend = async () => {
     const validRecipients = parseRecipients(recipients);
     
@@ -45,7 +47,8 @@ export default function LawFirmEmailSender() {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-bulk-email', {
+      const response = await fetch(`${API_URL}/api/send-bulk-email`, 
+        {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
