@@ -1,3 +1,4 @@
-[00:00:07.585] Server  LOG      ✓ Ready in 5.4s
-[00:00:23.192] Server  LOG      ○ Compiling / ...
-[00:00:30.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.189] Server  LOG      ✓ Ready in 2.3s
+[00:00:14.836] Server  LOG      ○ Compiling / ...
+[00:00:16.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:30.098] Browser LOG     Sending to: http://localhost:5000/api/send-bulk-email
