@@ -1,10 +1,15 @@
 "use client"
 
-import React, { useState } from 'react';
-import { Mail, Send, AlertCircle, CheckCircle, Loader2, Scale, FileText, Users } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Mail, Send, AlertCircle, CheckCircle, Loader2, Scale, FileText, Users, Bold, Italic, Underline, List, ListOrdered, Palette } from 'lucide-react';
 
-// API Configuration - Update this with your Vercel URL
+// API Configuration
+// local env
+// const API_URL = process.env.NEXT_APP_API_URL || 'http://localhost:5000';
+
+// production env
 const API_URL = process.env.NEXT_APP_API_URL || 'https://bulkmailsoftwarebackend.vercel.app';
+
 
 export default function LawFirmEmailSender() {
   const [recipients, setRecipients] = useState('');
@@ -12,6 +17,92 @@ export default function LawFirmEmailSender() {
   const [message, setMessage] = useState('');
   const [sending, setSending] = useState(false);
   const [result, setResult] = useState(null);
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [customColor, setCustomColor] = useState('#000000');
+  const [currentColor, setCurrentColor] = useState('#000000');
+  const editorRef = useRef(null);
+  const colorPickerRef = useRef(null);
+
+  const colors = [
+    '#000000', '#e60000', '#ff9900', '#ffff00', '#008a00', '#0066cc', '#9933ff',
+    '#ffffff', '#facccc', '#ffebcc', '#ffffcc', '#cce8cc', '#cce0f5', '#ebd6ff',
+    '#bbbbbb', '#f06666', '#ffc266', '#ffff66', '#66b966', '#66a3e0', '#c285ff',
+    '#888888', '#a10000', '#b26b00', '#b2b200', '#006100', '#0047b2', '#6b24b2',
+    '#444444', '#5c0000', '#663d00', '#666600', '#003700', '#002966', '#3d1466'
+  ];
+
+  // Modern approach: Use CSS to style list markers
+  const applyFormat = (command, value = null) => {
+    document.execCommand(command, false, value);
+    editorRef.current?.focus();
+  };
+
+  const applyColor = (color) => {
+    setCurrentColor(color);
+    const selection = window.getSelection();
+    
+    if (selection && selection.rangeCount > 0) {
+      // Apply the color using execCommand
+      document.execCommand('foreColor', false, color);
+      
+      // Find if we're in a list and apply color to the list item
+      const range = selection.getRangeAt(0);
+      let node = range.commonAncestorContainer;
+      if (node.nodeType === 3) node = node.parentElement;
+      
+      const listItem = node?.closest('li');
+      if (listItem) {
+        // Apply color directly to list item for marker inheritance
+        listItem.style.setProperty('color', color, 'important');
+        
+        // Also wrap all direct text nodes in spans with the color
+        Array.from(listItem.childNodes).forEach(child => {
+          if (child.nodeType === 3 && child.textContent.trim()) {
+            const span = document.createElement('span');
+            span.style.color = color;
+            span.textContent = child.textContent;
+            listItem.replaceChild(span, child);
+          }
+        });
+      }
+    }
+    
+    setShowColorPicker(false);
+    editorRef.current?.focus();
+  };
+
+  const applyCustomColor = () => {
+    applyColor(customColor);
+  };
+
+  const handleEditorInput = () => {
+    if (editorRef.current) {
+      setMessage(editorRef.current.innerHTML);
+    }
+  };
+
+  useEffect(() => {
+    if (editorRef.current && editorRef.current.innerHTML !== message) {
+      editorRef.current.innerHTML = message;
+    }
+  }, [message]);
+
+  // Close color picker when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (colorPickerRef.current && !colorPickerRef.current.contains(event.target)) {
+        setShowColorPicker(false);
+      }
+    };
+
+    if (showColorPicker) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showColorPicker]);
 
   const parseRecipients = (text) => {
     const emails = text
@@ -70,6 +161,9 @@ export default function LawFirmEmailSender() {
         setRecipients('');
         setSubject('');
         setMessage('');
+        if (editorRef.current) {
+          editorRef.current.innerHTML = '';
+        }
       } else {
         setResult({ success: false, message: data.message || 'Failed to send emails' });
       }
@@ -91,7 +185,7 @@ export default function LawFirmEmailSender() {
                 <Scale className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-3xl font-serif font-bold tracking-tight">Legal Communications</h1>
+                <h1 className="text-3xl font-serif font-bold tracking-tight">Developers Infotech</h1>
                 <p className="text-slate-300 text-sm mt-1">Professional Client Correspondence System</p>
               </div>
             </div>
@@ -222,14 +316,126 @@ export default function LawFirmEmailSender() {
                   <label className="block text-sm font-semibold text-slate-900 mb-3 uppercase tracking-wide">
                     Message Content
                   </label>
-                  <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Dear Client,&#10;&#10;Please find enclosed information regarding...&#10;&#10;Best regards,"
-                    rows={12}
-                    className="w-full px-4 py-3 text-slate-700 bg-stone-50 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none leading-relaxed"
+                  
+                  {/* Formatting Toolbar */}
+                  <div className="flex items-center gap-1 p-2 bg-stone-100 border border-stone-300 rounded-t-md border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => applyFormat('bold')}
+                      className="p-2 hover:bg-stone-200 rounded transition-colors"
+                      title="Bold"
+                    >
+                      <Bold className="w-4 h-4 text-slate-700" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => applyFormat('italic')}
+                      className="p-2 hover:bg-stone-200 rounded transition-colors"
+                      title="Italic"
+                    >
+                      <Italic className="w-4 h-4 text-slate-700" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => applyFormat('underline')}
+                      className="p-2 hover:bg-stone-200 rounded transition-colors"
+                      title="Underline"
+                    >
+                      <Underline className="w-4 h-4 text-slate-700" />
+                    </button>
+                    <div className="w-px h-6 bg-stone-300 mx-1"></div>
+                    <button
+                      type="button"
+                      onClick={() => applyFormat('insertUnorderedList')}
+                      className="p-2 hover:bg-stone-200 rounded transition-colors"
+                      title="Bullet List"
+                    >
+                      <List className="w-4 h-4 text-slate-700" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => applyFormat('insertOrderedList')}
+                      className="p-2 hover:bg-stone-200 rounded transition-colors"
+                      title="Numbered List"
+                    >
+                      <ListOrdered className="w-4 h-4 text-slate-700" />
+                    </button>
+                    <div className="w-px h-6 bg-stone-300 mx-1"></div>
+                    <div className="relative" ref={colorPickerRef}>
+                      <button
+                        type="button"
+                        onClick={() => setShowColorPicker(!showColorPicker)}
+                        className="p-2 hover:bg-stone-200 rounded transition-colors flex items-center gap-1"
+                        title="Text Color"
+                      >
+                        <Palette className="w-4 h-4 text-slate-700" />
+                        <div className="w-4 h-4 rounded border border-stone-400" style={{ backgroundColor: currentColor }}></div>
+                      </button>
+                      
+                      {showColorPicker && (
+                        <div className="absolute top-full left-0 mt-1 bg-white border border-stone-300 rounded-lg shadow-lg p-3 z-10">
+                          <div className="grid grid-cols-7 gap-1 w-[196px] mb-3">
+                            {colors.map((color) => (
+                              <button
+                                key={color}
+                                type="button"
+                                onClick={() => applyColor(color)}
+                                className="w-6 h-6 rounded border border-stone-300 hover:scale-110 transition-transform"
+                                style={{ backgroundColor: color }}
+                                title={color}
+                              />
+                            ))}
+                          </div>
+                          <div className="border-t border-stone-200 pt-3">
+                            <label className="block text-xs font-semibold text-slate-700 mb-2">CUSTOM COLOR</label>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="color"
+                                value={customColor}
+                                onChange={(e) => setCustomColor(e.target.value)}
+                                className="w-10 h-10 rounded border border-stone-300 cursor-pointer"
+                              />
+                              <input
+                                type="text"
+                                value={customColor}
+                                onChange={(e) => setCustomColor(e.target.value)}
+                                className="flex-1 px-2 py-1 text-xs border border-stone-300 rounded font-mono"
+                                placeholder="#000000"
+                              />
+                              <button
+                                type="button"
+                                onClick={applyCustomColor}
+                                className="px-3 py-1 bg-amber-600 text-white text-xs font-semibold rounded hover:bg-amber-700 transition-colors"
+                              >
+                                Apply
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <style jsx>{`
+                    [contenteditable] ul li,
+                    [contenteditable] ol li {
+                      color: inherit;
+                    }
+                    [contenteditable] ul li::marker,
+                    [contenteditable] ol li::marker {
+                      color: inherit;
+                    }
+                  `}</style>
+
+                  <div
+                    ref={editorRef}
+                    contentEditable
+                    onInput={handleEditorInput}
+                    className="w-full min-h-[300px] px-4 py-3 text-slate-700 bg-stone-50 border border-stone-300 rounded-b-md focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent leading-relaxed [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:my-2 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:my-2 [&_li]:mb-1"
+                    style={{ whiteSpace: 'pre-wrap' }}
+                    suppressContentEditableWarning
                   />
-                  <p className="mt-2 text-xs text-slate-500">Professional legal correspondence formatting applied automatically</p>
+                  <p className="mt-2 text-xs text-slate-500">Use the toolbar to format your legal correspondence</p>
                 </div>
 
                 {/* Result Message */}
@@ -284,7 +490,7 @@ export default function LawFirmEmailSender() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <Scale className="w-5 h-5 text-amber-600" />
-              <span className="font-serif font-bold text-white">Legal Communications System</span>
+              <span className="font-serif font-bold text-white text-2xl">Developers Infotech</span>
             </div>
             <p className="text-sm">Confidential & Secure Attorney-Client Communication</p>
           </div>
